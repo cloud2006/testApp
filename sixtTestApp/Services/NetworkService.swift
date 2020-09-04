@@ -8,6 +8,11 @@
 
 import Foundation
 
+enum RequestError: Error {
+    case apiUnreachable
+    case invalidJSON
+}
+
 final class NetworkService {
     
     let baseUrl = "http://www.codetalk.de/cars.json"
@@ -15,9 +20,8 @@ final class NetworkService {
     let defaultSession = URLSession(configuration: .default)
     
     var dataTask: URLSessionDataTask?
-    var errorMessage = ""
     
-    func fetchData(completion: @escaping ([Car]?) -> Void) {
+    func fetchData(completion: @escaping (Result<[Car], RequestError>) -> Void) {
         dataTask?.cancel()
         
         guard let url = URL(string: baseUrl) else {
@@ -29,21 +33,16 @@ final class NetworkService {
                 self?.dataTask = nil
             }
             
-            if let error = error {
-                self?.errorMessage += "DataTask error: " + error.localizedDescription + "\n"
-            } else if let data = data {
-                
-                var response: [Car]
-                
-                do {
-                    let responseData = try JSONDecoder().decode([Car].self, from: data)
-                    response = responseData
-                } catch _ as NSError {
-                    return
-                }
-                
-                DispatchQueue.main.async {
-                    completion(response)
+            DispatchQueue.main.async {
+                if error != nil {
+                    completion(.failure(.apiUnreachable))
+                } else if let data = data {
+                    do {
+                        let responseData = try JSONDecoder().decode([Car].self, from: data)
+                        completion(.success(responseData))
+                    } catch {
+                        completion(.failure(.invalidJSON))
+                    }
                 }
             }
         }

@@ -21,4 +21,6 @@ struct Car: Codable {
     let longitude: Double
     let innerCleanliness: String
     let carImageUrl: String
+    
+    var title: String { modelName + " " + licensePlate }
 }

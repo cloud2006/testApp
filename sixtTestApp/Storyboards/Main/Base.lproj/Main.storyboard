@@ -14,9 +14,36 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="cyA-uB-Vqg">
+                                <rect key="frame" x="0.0" y="44" width="414" height="409"/>
+                            </mapView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="G5W-ic-2bc">
+                                <rect key="frame" x="0.0" y="453" width="414" height="409"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="xoM-xU-xCp"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Zzk-xI-K4c"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="G5W-ic-2bc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="67c-4l-ajp"/>
+                            <constraint firstItem="cyA-uB-Vqg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="AVz-cf-ea7"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="G5W-ic-2bc" secondAttribute="bottom" id="FZW-It-Ykk"/>
+                            <constraint firstItem="cyA-uB-Vqg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Gpa-AP-0Fc"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cyA-uB-Vqg" secondAttribute="trailing" id="IFe-zM-lzT"/>
+                            <constraint firstItem="G5W-ic-2bc" firstAttribute="height" secondItem="cyA-uB-Vqg" secondAttribute="height" id="R8u-0d-BfB"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="G5W-ic-2bc" secondAttribute="trailing" id="o5y-gM-MLg"/>
+                            <constraint firstItem="G5W-ic-2bc" firstAttribute="top" secondItem="cyA-uB-Vqg" secondAttribute="bottom" id="u5f-oc-ua0"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="cyA-uB-Vqg" id="mOV-un-aON"/>
+                        <outlet property="tableView" destination="G5W-ic-2bc" id="MaM-fL-cdr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

@@ -17,6 +17,9 @@
 		DA6A5B2825012A9A00AA8EEB /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6A5B2725012A9A00AA8EEB /* Car.swift */; };
 		DA6A5B2A25013E6500AA8EEB /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6A5B2925013E6500AA8EEB /* MainViewModel.swift */; };
 		DA6A5B2D2502292800AA8EEB /* UITableView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6A5B2C2502292800AA8EEB /* UITableView+Utils.swift */; };
+		DA6A5B31250235BF00AA8EEB /* CarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6A5B2F250235BF00AA8EEB /* CarCell.swift */; };
+		DA6A5B32250235BF00AA8EEB /* CarCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA6A5B30250235BF00AA8EEB /* CarCell.xib */; };
+		DACC124E25025855007EEF1D /* MapAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACC124D25025855007EEF1D /* MapAnnotation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +35,9 @@
 		DA6A5B2725012A9A00AA8EEB /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
 		DA6A5B2925013E6500AA8EEB /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		DA6A5B2C2502292800AA8EEB /* UITableView+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Utils.swift"; sourceTree = "<group>"; };
+		DA6A5B2F250235BF00AA8EEB /* CarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarCell.swift; sourceTree = "<group>"; };
+		DA6A5B30250235BF00AA8EEB /* CarCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CarCell.xib; sourceTree = "<group>"; };
+		DACC124D25025855007EEF1D /* MapAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapAnnotation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +112,7 @@
 		DA6A5B2225011FCE00AA8EEB /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				DA6A5B2E250235A100AA8EEB /* Cells */,
 				DA6A5B0F25011BA000AA8EEB /* MainViewController.swift */,
 			);
 			path = Views;
@@ -115,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				DA6A5B2725012A9A00AA8EEB /* Car.swift */,
+				DACC124D25025855007EEF1D /* MapAnnotation.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -133,6 +141,15 @@
 				DA6A5B2C2502292800AA8EEB /* UITableView+Utils.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		DA6A5B2E250235A100AA8EEB /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				DA6A5B2F250235BF00AA8EEB /* CarCell.swift */,
+				DA6A5B30250235BF00AA8EEB /* CarCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -195,6 +212,7 @@
 			files = (
 				DA6A5B1825011BA100AA8EEB /* LaunchScreen.storyboard in Resources */,
 				DA6A5B1525011BA100AA8EEB /* Assets.xcassets in Resources */,
+				DA6A5B32250235BF00AA8EEB /* CarCell.xib in Resources */,
 				DA6A5B1325011BA000AA8EEB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -208,10 +226,12 @@
 			files = (
 				DA6A5B1025011BA000AA8EEB /* MainViewController.swift in Sources */,
 				DA6A5B0C25011BA000AA8EEB /* AppDelegate.swift in Sources */,
+				DACC124E25025855007EEF1D /* MapAnnotation.swift in Sources */,
 				DA6A5B2825012A9A00AA8EEB /* Car.swift in Sources */,
 				DA6A5B2625012A1700AA8EEB /* NetworkService.swift in Sources */,
 				DA6A5B2D2502292800AA8EEB /* UITableView+Utils.swift in Sources */,
 				DA6A5B0E25011BA000AA8EEB /* SceneDelegate.swift in Sources */,
+				DA6A5B31250235BF00AA8EEB /* CarCell.swift in Sources */,
 				DA6A5B2A25013E6500AA8EEB /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
